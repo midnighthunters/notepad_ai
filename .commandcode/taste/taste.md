@@ -1,0 +1,11 @@
+- Prefers preserving the host application's existing technology stack, UI conventions, performance profile, and behavior rather than introducing a new framework or redesign. Confidence: 0.99
+- Expects implementation work to be end-to-end and production-ready, not limited to plans, mockups, pseudocode, stubs, or partially wired features. Confidence: 0.99
+- Prefers a disciplined workflow of repository/instruction discovery, clean baseline build, incremental implementation, compilation and tests after phases, diff review, and repeated verification until failures are fixed. Confidence: 0.99
+- Prefers architecture with clear separation of concerns, small testable interfaces, and minimal integration hooks rather than god objects or duplicated pipelines. Confidence: 0.97
+- Strongly prefers privacy- and security-conscious defaults: no telemetry, no plaintext secrets, no unnecessary data transmission, strict input/output validation, and no execution of model-supplied tools or commands. Confidence: 0.99
+- Prefers UI-thread-only mutation of native editor/UI state, immutable snapshots across worker boundaries, cancellation-safe ownership, and explicit stale-result/lifetime validation. Confidence: 0.99
+- Prefers deterministic automated tests using fakes and fixtures, with no live provider requests, API keys, internet access, or reliance on real UI handles in core tests. Confidence: 0.99
+- Prefers platform APIs and existing repository dependencies over adding heavyweight or unnecessary third-party dependencies; vendored code should remain untouched unless unavoidable and licensing must be reviewed. Confidence: 0.98
+- Values honest reporting: do not claim implementation, compilation, tests, provider support, or completion unless actually performed; report exact commands, results, limitations, and blockers. Confidence: 0.99
+- Prefers comprehensive documentation covering build targets, behavior, security/privacy, configuration, limitations, licensing, and verification results. Confidence: 0.96
+- Prefers autonomous progress without routine approval between implementation phases, while pausing for destructive actions, secrets, external publishing, or genuinely product-changing ambiguity. Confidence: 0.97
