@@ -1,50 +1,37 @@
-What is Notepad++ ?
-===================
+# Notepad++ AI
 
-[![GitHub release](https://img.shields.io/github/release/notepad-plus-plus/notepad-plus-plus.svg)](../../releases/latest)&nbsp;&nbsp;&nbsp;&nbsp;[![Build Status](https://img.shields.io/github/actions/workflow/status/notepad-plus-plus/notepad-plus-plus/CI_build.yml)](https://github.com/notepad-plus-plus/notepad-plus-plus/actions/workflows/CI_build.yml)
-&nbsp;&nbsp;&nbsp;&nbsp;[![Join the discussions at https://community.notepad-plus-plus.org/](https://notepad-plus-plus.org/assets/images/NppCommunityBadge.svg)](https://community.notepad-plus-plus.org/)
+A Windows-native text editor focused on precise, provider-backed **AI Edit** actions. Describe the change you want, and the editor applies a validated edit plan to the selected text or current document.
 
-Notepad++ is a free (free as in both "free speech" and "free beer") source code
-editor and Notepad replacement that supports several programming languages and
-natural languages. Running in the MS Windows environment, its use is governed by
-[GPL License](LICENSE).
+![Notepad++ AI Edit workflow: the AI menu and inline instruction prompt](docs/images/ai-edit-workflow.svg)
 
-See the [Notepad++ official site](https://notepad-plus-plus.org/) for more information.
+## AI Edit
 
+- Open **AI → AI Edit…** or press **Ctrl+Alt+I**.
+- Enter an instruction in the inline `AI >` prompt, then press **Enter** to apply it. Press **Esc** to cancel.
+- With text selected, AI Edit can modify only that selection. Without a selection, it can modify the complete document.
+- Results are validated against the captured document snapshot and applied as one undoable action, so a single **Undo** reverts the full AI edit.
 
-Notepad++ GPG Release Key
--------------------------
-_Since the release of version 7.6.5 Notepad++ is signed using GPG with the following key:_
+AI Edit requires a writable UTF-8 document and supports one selection at a time.
 
-- **Signer:** Notepad++
-- **E-mail:** don.h@free.fr
-- **Key ID:** 0x8D84F46E
-- **Key fingerprint:** 14BC E436 2749 B2B5 1F8C 7122 6C42 9F1D 8D84 F46E
-- **Key type:** RSA 4096/4096
-- **Created:** 2019-03-11
-- **Expires:** 2027-03-13
+## Configure an AI provider
 
-https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/nppGpgPub.asc
+1. Open **Settings → Preferences → AI**.
+2. Select **Google Gemini** or **OpenRouter (OpenAI-compatible)**.
+3. Enter your API key, select the model and endpoint if needed, then click **Save**.
+4. Select **Test connection** to confirm the provider is available.
 
+API keys are stored in **Windows Credential Manager**, not in the editor configuration file. The selected provider, model, and endpoint are saved in `config.xml`.
 
-Supported OS
-------------
+## Data and editing boundaries
 
-All the Windows systems still supported by Microsoft are supported by Notepad++. However, not all Notepad++ users can or want to use the newest system. Here is the [Supported systems information](SUPPORTED_SYSTEM.md) you may need in case you are one of them.
+AI Edit sends your instruction and the authorized document text to the provider you configure. Keep this in mind when working with sensitive content.
 
+The application restricts the provider response to a structured edit plan. Every proposed change is checked against the original document snapshot and must stay inside the selected text or document scope before it is applied. If the document changes while a request is in progress, the result is rejected rather than applied to stale content.
 
+## Build
 
+Build the Windows application from source by following [BUILD.md](BUILD.md).
 
-Build Notepad++
----------------
+## License
 
-Please follow [build guide](BUILD.md) to build Notepad++ from source.
-
-
-Contribution
-------------
-
-Contributions are welcome. Be mindful of our [Contribution Rules](CONTRIBUTING.md) to increase the likelihood of your contribution getting accepted.
-
-[Notepad++ Contributors](https://github.com/notepad-plus-plus/notepad-plus-plus/graphs/contributors)
-
+This project is distributed under the [GNU General Public License](LICENSE).

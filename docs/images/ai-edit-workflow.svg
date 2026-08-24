@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1032" height="496" viewBox="0 0 1032 496" role="img" aria-labelledby="title description">
+  <title id="title">Notepad++ AI Edit workflow</title>
+  <desc id="description">A Notepad++ window showing the AI menu and inline AI prompt below a short document.</desc>
+  <style>
+    .ui { font-family: Segoe UI, Arial, sans-serif; fill: #222; }
+    .menu { font-size: 16px; }
+    .small { font-size: 13px; }
+    .code { font-family: Consolas, 'Courier New', monospace; fill: #111; }
+  </style>
+  <rect width="1032" height="496" fill="#ffffff"/>
+  <rect width="1032" height="30" fill="#f4f4f4"/>
+  <rect y="29" width="1032" height="1" fill="#d0d0d0"/>
+  <rect x="3" y="5" width="18" height="19" rx="2" fill="#e4f2d8" stroke="#737373"/>
+  <path d="M6 18 L10 7 L14 13 L19 6 L19 20 L6 20Z" fill="#55a649"/>
+  <text x="28" y="20" class="ui" font-size="17">*new 1 - Notepad++ [Administrator]</text>
+
+  <rect y="30" width="1032" height="28" fill="#ffffff"/>
+  <text x="8" y="49" class="ui menu">File</text><text x="49" y="49" class="ui menu">Edit</text><text x="93" y="49" class="ui menu">AI</text><text x="124" y="49" class="ui menu">Search</text><text x="188" y="49" class="ui menu">View</text><text x="238" y="49" class="ui menu">Language</text><text x="323" y="49" class="ui menu">Language</text><text x="408" y="49" class="ui menu">Settings</text><text x="476" y="49" class="ui menu">Tools</text><text x="530" y="49" class="ui menu">Macro</text><text x="589" y="49" class="ui menu">Run</text><text x="626" y="49" class="ui menu">Plugins</text><text x="690" y="49" class="ui menu">Window</text><text x="782" y="49" class="ui menu">?</text>
+
+  <rect y="58" width="1032" height="30" fill="#f8f8f8" stroke="#d2d2d2"/>
+  <g transform="translate(7 63)">
+    <g fill="#fdfdfd" stroke="#9aa0a6"><rect x="0" y="2" width="18" height="18"/><rect x="27" y="2" width="18" height="18"/><rect x="54" y="2" width="18" height="18"/><rect x="81" y="2" width="18" height="18"/><rect x="108" y="2" width="18" height="18"/><rect x="135" y="2" width="18" height="18"/><rect x="162" y="2" width="18" height="18"/><rect x="189" y="2" width="18" height="18"/><rect x="216" y="2" width="18" height="18"/><rect x="243" y="2" width="18" height="18"/><rect x="270" y="2" width="18" height="18"/><rect x="297" y="2" width="18" height="18"/><rect x="324" y="2" width="18" height="18"/><rect x="351" y="2" width="18" height="18"/><rect x="378" y="2" width="18" height="18"/><rect x="405" y="2" width="18" height="18"/><rect x="432" y="2" width="18" height="18"/><rect x="459" y="2" width="18" height="18"/><rect x="486" y="2" width="18" height="18"/><rect x="513" y="2" width="18" height="18"/><rect x="540" y="2" width="18" height="18"/><rect x="567" y="2" width="18" height="18"/><rect x="594" y="2" width="18" height="18"/><rect x="621" y="2" width="18" height="18"/><rect x="648" y="2" width="18" height="18"/><rect x="675" y="2" width="18" height="18"/><rect x="702" y="2" width="18" height="18"/><rect x="729" y="2" width="18" height="18"/><rect x="756" y="2" width="18" height="18"/><rect x="783" y="2" width="18" height="18"/><rect x="810" y="2" width="18" height="18"/><rect x="837" y="2" width="18" height="18"/><rect x="864" y="2" width="18" height="18"/><rect x="891" y="2" width="18" height="18"/></g>
+    <g fill="#4d9de0"><rect x="58" y="5" width="11" height="11"/><rect x="84" y="5" width="11" height="11"/><rect x="246" y="5" width="11" height="11"/><rect x="598" y="5" width="11" height="11"/></g>
+    <g fill="#62b65c"><circle cx="277" cy="11" r="7"/><circle cx="304" cy="11" r="7"/></g>
+    <g fill="#e75656"><circle cx="802" cy="11" r="6"/></g>
+  </g>
+
+  <rect y="89" width="1032" height="28" fill="#f8f8f8" stroke="#cfcfcf"/>
+  <rect x="3" y="91" width="116" height="25" fill="#fff" stroke="#d5d5d5"/>
+  <rect x="4" y="94" width="19" height="18" fill="#e94f55"/><path d="M7 97 h12 v3 h-12z M7 103 h12 v6 h-12z" fill="#fff"/>
+  <text x="28" y="109" class="ui small">new 1</text><text x="77" y="109" class="ui small">⚒</text><rect x="101" y="97" width="15" height="14" fill="#d34f5b"/><path d="M104 100 l8 8 M112 100 l-8 8" stroke="#fff" stroke-width="1.5"/>
+
+  <rect y="117" width="60" height="379" fill="#f7f7f7"/>
+  <rect x="60" y="117" width="1" height="379" fill="#e0e0e0"/>
+  <rect x="60" y="151" width="5" height="19" fill="#ff7b00"/>
+  <g class="code" font-size="16">
+    <text x="23" y="133">1</text><text x="68" y="133">Optimus is Tesla's humanoid robot, designed to perform repetitive and dangerous tasks.</text>
+    <text x="23" y="151">2</text><text x="68" y="151">Standing about five feet eight inches tall, it uses advanced AI, cameras, and actuators to walk, lift objects, and navigate environments.</text>
+    <text x="23" y="169">3</text><text x="68" y="169">Tesla hopes Optimus transforms industry and home life, becoming one of the world's most widely produced robots.</text>
+    <text x="23" y="187">4</text>
+  </g>
+  <text x="66" y="207" class="code" font-size="14" font-weight="700">AI &gt;</text>
+  <rect x="95" y="190" width="936" height="25" fill="#fff" stroke="#2b83e8" stroke-width="2"/>
+</svg>
