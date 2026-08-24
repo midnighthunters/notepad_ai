@@ -1,2 +1,2 @@
-powereditor_ai_core_tests 1 0.0388309
+powereditor_ai_core_tests 4 0.804577
 ---

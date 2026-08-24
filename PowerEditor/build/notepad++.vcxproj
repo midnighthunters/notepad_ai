@@ -454,6 +454,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Notepad_plus_Window.cpp" />
     <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppBigSwitch.cpp" />
     <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppCommands.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\FormatOnSave.cpp" />
     <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppIO.cpp" />
     <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppNotification.cpp" />
     <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsBig5Prober.cpp" />
@@ -536,6 +537,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha512\sha512.h" />
     <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\hmac\hmac.h" />
     <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppDarkMode.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\FormatOnSave.h" />
     <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppXml.h" />
     <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\columnEditor_rc.h" />
     <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\FindReplaceDlg_rc.h" />

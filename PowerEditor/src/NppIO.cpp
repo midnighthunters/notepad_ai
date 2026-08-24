@@ -28,6 +28,7 @@
 #include <ctime>
 #include <cwchar>
 #include <cwctype>
+#include <exception>
 #include <string>
 #include <unordered_set>
 #include <vector>
@@ -36,6 +37,7 @@
 
 #include "Buffer.h"
 #include "Common.h"
+#include "FormatOnSave.h"
 #include "CustomFileDialog.h"
 #include "DocTabView.h"
 #include "Notepad_plus.h"
@@ -62,6 +64,58 @@ using namespace std;
 // Reserved characters:  < > : " / \ | ? * tab  
 //  ("tab" is not in the official list, but it is good to avoid it)
 const std::wstring filenameReservedChars = L"<>:\"/\\|\?*\t";
+
+namespace
+{
+
+[[nodiscard]] NppFormatOnSave::DocumentLanguage getFormatOnSaveLanguage(LangType language)
+{
+	switch (language)
+	{
+		case L_JSON: return NppFormatOnSave::DocumentLanguage::Json;
+		case L_XML: return NppFormatOnSave::DocumentLanguage::Xml;
+		default: return NppFormatOnSave::DocumentLanguage::Unsupported;
+	}
+}
+
+bool formatBufferForSave(ScintillaEditView& editView, Buffer* buffer, LangType language)
+{
+	const NppFormatOnSave::DocumentLanguage documentLanguage = getFormatOnSaveLanguage(language);
+	if (documentLanguage == NppFormatOnSave::DocumentLanguage::Unsupported)
+		return false;
+
+	const Document originalDocument = editView.execute(SCI_GETDOCPOINTER);
+	Buffer* const originalBuffer = editView.getCurrentBuffer();
+	editView.execute(SCI_SETDOCPOINTER, 0, buffer->getDocument());
+	editView.setCurrentBuffer(buffer);
+
+	bool formatted = false;
+	try
+	{
+		const size_t length = editView.getCurrentDocLen();
+		const char* const text = reinterpret_cast<const char*>(editView.execute(SCI_GETCHARACTERPOINTER));
+		const NppFormatOnSave::FormatResult result = NppFormatOnSave::formatDocument(
+			std::string_view(text, length), documentLanguage);
+		if (result.wasFormatted())
+		{
+			editView.execute(SCI_BEGINUNDOACTION);
+			editView.execute(SCI_SETTARGETRANGE, 0, length);
+			editView.execute(SCI_REPLACETARGET, result.text.size(), reinterpret_cast<LPARAM>(result.text.data()));
+			editView.execute(SCI_ENDUNDOACTION);
+			formatted = true;
+		}
+	}
+	catch (const std::exception&)
+	{
+		// Formatting must never prevent the original document from being saved.
+	}
+
+	editView.execute(SCI_SETDOCPOINTER, 0, originalDocument);
+	editView.setCurrentBuffer(originalBuffer);
+	return formatted;
+}
+
+} // namespace
 
 DWORD WINAPI Notepad_plus::monitorFileOnChange(void * params)
 {
@@ -690,6 +744,34 @@ bool Notepad_plus::doSave(BufferID id, const wchar_t * filename, bool isCopy)
 			MB_OK | MB_ICONWARNING);
 
 		return false;
+	}
+
+	if (!isCopy && NppParameters::getInstance().getNppGUI()._formatOnSave)
+	{
+		Buffer* const buffer = MainFileManager.getBufferByID(id);
+		LangType language = buffer->getLangType();
+		if (language == L_TEXT)
+		{
+			const wchar_t* extension = ::PathFindExtension(filename);
+			if (extension != nullptr && *extension == L'.')
+				language = NppParameters::getInstance().getLangFromExt(extension + 1);
+		}
+
+		if (!buffer->isLargeFile() && _pEditView->getCurrentBufferID() == id)
+		{
+			const intptr_t anchor = _pEditView->execute(SCI_GETANCHOR);
+			const intptr_t caret = _pEditView->execute(SCI_GETCURRENTPOS);
+			if (formatBufferForSave(_invisibleEditView, buffer, language))
+			{
+				buffer->setNeedsLexing(true);
+				const intptr_t newLength = static_cast<intptr_t>(_pEditView->getCurrentDocLen());
+				_pEditView->execute(SCI_SETSEL, std::min(caret, newLength), std::min(anchor, newLength));
+			}
+		}
+		else if (!buffer->isLargeFile() && formatBufferForSave(_invisibleEditView, buffer, language))
+		{
+			buffer->setNeedsLexing(true);
+		}
 	}
 
 	SCNotification scnN{};

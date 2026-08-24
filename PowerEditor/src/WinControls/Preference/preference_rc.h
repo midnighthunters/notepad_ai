@@ -292,6 +292,7 @@
 #define IDC_COMBO_AUTOUPDATE                           6364
 #define IDC_AUTOUPDATE_STATIC                          6365
 #define IDC_CHECK_ALOOWSIMLINKFAW                      6366
+#define IDC_CHECK_FORMAT_ON_SAVE                       6367
 
 #define IDD_PREFERENCE_SUB_NEWDOCUMENT                 6400
 #define IDC_FORMAT_GB_STATIC                           6401
@@ -543,3 +544,18 @@
 #define IDC_RADIO_AUTOINDENT_NONE                      7162
 #define IDC_RADIO_AUTOINDENT_BASIC                     7163
 #define IDC_RADIO_AUTOINDENT_ADVANCED                  7164
+
+#define IDD_PREFERENCE_SUB_AI                          7180
+#define IDC_AI_GB_STATIC                               7181
+#define IDC_AI_APIKEY_STATIC                           7182
+#define IDC_AI_APIKEY_EDIT                             7183
+#define IDC_AI_APIKEY_SAVE_BUTTON                      7184
+#define IDC_AI_APIKEY_STATUS_STATIC                    7185
+#define IDC_AI_MODEL_STATIC                            7186
+#define IDC_AI_MODEL_EDIT                              7187
+#define IDC_AI_TEST_BUTTON                             7188
+#define IDC_AI_NOTE_STATIC                             7189
+#define IDC_AI_PROVIDER_STATIC                         7190
+#define IDC_AI_PROVIDER_COMBO                          7191
+#define IDC_AI_ENDPOINT_STATIC                         7192
+#define IDC_AI_ENDPOINT_EDIT                           7193

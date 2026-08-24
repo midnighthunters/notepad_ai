@@ -152,6 +152,7 @@
     <ClCompile Include="..\src\Notepad_plus_Window.cpp" />
     <ClCompile Include="..\src\NppBigSwitch.cpp" />
     <ClCompile Include="..\src\NppCommands.cpp" />
+    <ClCompile Include="..\src\FormatOnSave.cpp" />
     <ClCompile Include="..\src\NppIO.cpp" />
     <ClCompile Include="..\src\NppNotification.cpp" />
     <ClCompile Include="..\src\Parameters.cpp" />

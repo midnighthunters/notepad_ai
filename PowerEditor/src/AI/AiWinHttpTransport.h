@@ -45,10 +45,13 @@ struct AiWinHttpTransportOptions
 	std::uint32_t resolveTimeoutMilliseconds = 10 * 1000;
 	std::uint32_t connectTimeoutMilliseconds = 15 * 1000;
 	std::uint32_t sendTimeoutMilliseconds = 30 * 1000;
-	std::uint32_t receiveTimeoutMilliseconds = 30 * 1000;
+	// Generative endpoints (e.g. Gemini "thinking" models) can legitimately take well over 30s to
+	// produce a first byte. A short receive timeout surfaced as "WinHTTP request failed". The request
+	// runs off the UI thread and is user-cancellable, so a generous bound is safe here.
+	std::uint32_t receiveTimeoutMilliseconds = 120 * 1000;
 };
 
-// Uses WinHTTP with the system proxy disabled, certificate validation left enabled, redirect
+// Uses WinHTTP with Windows automatic proxy discovery, certificate validation left enabled, redirect
 // following disabled, bounded bodies, and a stop-token callback that closes the request handle.
 class WinHttpAiTransport final : public IAiTransport
 {

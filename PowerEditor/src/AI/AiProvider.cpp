@@ -18,6 +18,7 @@
 #include "AiWinHttpTransport.h"
 
 #include <algorithm>
+#include <chrono>
 #include <cmath>
 #include <exception>
 #include <limits>
@@ -485,23 +486,64 @@ AiResult<std::string> AiHttpProvider::complete(const AiProviderRequest & request
 		return endpoint.error();
 	if (_adapter->requiresSecret() && !endpoint.value().usesHttps && !_configuration.allowInsecureLoopbackForSecret)
 		return AiMakeError(AiErrorCode::TransportRejected, "A credentialed provider requires HTTPS unless loopback HTTP is explicitly enabled.");
-	AiResult<AiHttpResponse> wireResponse = _transport->send(wireRequest.value(), stopToken);
-	for (AiHttpHeader & header : wireRequest.value().headers)
+
+	auto clearRequestHeaders = [&wireRequest]()
 	{
-		std::fill(header.value.begin(), header.value.end(), '\0');
-		header.value.clear();
-	}
-	if (!wireResponse)
+		for (AiHttpHeader & header : wireRequest.value().headers)
+		{
+			std::fill(header.value.begin(), header.value.end(), '\0');
+			header.value.clear();
+		}
+	};
+	constexpr std::size_t maxAttempts = 4;
+	for (std::size_t attempt = 0; attempt < maxAttempts; ++attempt)
 	{
-		if (wireResponse.error().code == AiErrorCode::Cancelled || stopToken.stop_requested())
+		if (stopToken.stop_requested())
+		{
+			clearRequestHeaders();
 			return cancelledError();
-		return AiMakeError(wireResponse.error().code, "AI provider request failed: " + wireResponse.error().message);
+		}
+
+		AiResult<AiHttpResponse> wireResponse = _transport->send(wireRequest.value(), stopToken);
+		if (!wireResponse)
+		{
+			clearRequestHeaders();
+			if (wireResponse.error().code == AiErrorCode::Cancelled || stopToken.stop_requested())
+				return cancelledError();
+			return AiMakeError(wireResponse.error().code, "AI provider request failed: " + wireResponse.error().message);
+		}
+
+		const std::uint32_t statusCode = wireResponse.value().statusCode;
+		if (statusCode >= 200 && statusCode < 300)
+		{
+			clearRequestHeaders();
+			if (stopToken.stop_requested())
+				return cancelledError();
+			return _adapter->decode(wireResponse.value());
+		}
+
+		const bool transientFailure = statusCode == 429 || statusCode == 500 || statusCode == 502 || statusCode == 503 || statusCode == 504;
+		if (!transientFailure || attempt + 1 == maxAttempts)
+		{
+			clearRequestHeaders();
+			const std::string retrySuffix = transientFailure ? " after " + std::to_string(maxAttempts) + " attempts." : ".";
+			return AiMakeError(AiErrorCode::HttpFailure, "AI provider returned HTTP status " + std::to_string(statusCode) + retrySuffix);
+		}
+
+		const int retryDelayMilliseconds = 250 << static_cast<int>(attempt);
+		for (int remaining = retryDelayMilliseconds; remaining > 0; remaining -= 50)
+		{
+			if (stopToken.stop_requested())
+			{
+				clearRequestHeaders();
+				return cancelledError();
+			}
+			std::this_thread::sleep_for(std::chrono::milliseconds(std::min(remaining, 50)));
+		}
 	}
-	if (wireResponse.value().statusCode < 200 || wireResponse.value().statusCode >= 300)
-		return AiMakeError(AiErrorCode::HttpFailure, "AI provider returned HTTP status " + std::to_string(wireResponse.value().statusCode) + ".");
-	if (stopToken.stop_requested())
-		return cancelledError();
-	return _adapter->decode(wireResponse.value());
+
+	clearRequestHeaders();
+	return AiMakeError(AiErrorCode::InternalError, "AI provider retry state was unexpectedly exhausted.");
 }
 
 void AiFakeTransport::enqueueResponse(AiHttpResponse response)

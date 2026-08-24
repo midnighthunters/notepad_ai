@@ -53,6 +53,7 @@
 #include "regExtDlgRc.h"
 #include "resource.h"
 #include "shortcut.h"
+#include "AI/AiNotepadCommand.h"
 
 using namespace std;
 
@@ -309,6 +310,9 @@ intptr_t CALLBACK PreferenceDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM
 			_searchEngineSubDlg.init(_hInst, _hSelf);
 			_searchEngineSubDlg.create(IDD_PREFERENCE_SUB_SEARCHENGINE, false, false);
 
+			_aiSubDlg.init(_hInst, _hSelf);
+			_aiSubDlg.create(IDD_PREFERENCE_SUB_AI, false, false);
+
 			_wVector.push_back(DlgInfo(&_generalSubDlg, L"General", L"Global"));
 			_wVector.push_back(DlgInfo(&_toolbarSubDlg, L"Toolbar", L"Toolbar"));
 			_wVector.push_back(DlgInfo(&_tabbarSubDlg, L"Tab Bar", L"Tabbar"));
@@ -332,6 +336,7 @@ intptr_t CALLBACK PreferenceDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM
 			_wVector.push_back(DlgInfo(&_performanceSubDlg, L"Performance", L"Performance"));
 			_wVector.push_back(DlgInfo(&_cloudAndLinkSubDlg, L"Cloud & Link", L"Cloud"));
 			_wVector.push_back(DlgInfo(&_searchEngineSubDlg, L"Search Engine", L"SearchEngine"));
+			_wVector.push_back(DlgInfo(&_aiSubDlg, L"AI", L"AI"));
 			_wVector.push_back(DlgInfo(&_miscSubDlg, L"MISC.", L"MISC"));
 
 
@@ -662,6 +667,7 @@ void PreferenceDlg::destroy()
 	_multiInstanceSubDlg.destroy();
 	_delimiterSubDlg.destroy();
 	_performanceSubDlg.destroy();
+	_aiSubDlg.destroy();
 }
 
 void TabbarSubDlg::setTabbarAlternateIcons(bool enable)
@@ -3339,6 +3345,7 @@ intptr_t CALLBACK MiscSubDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM)
 
 			::SendDlgItemMessage(_hSelf, IDC_CHECK_DETECTENCODING, BM_SETCHECK, nppGUI._detectEncoding, 0);
 			::SendDlgItemMessage(_hSelf, IDC_CHECK_SAVEALLCONFIRM, BM_SETCHECK, nppGUI._saveAllConfirm, 0);
+			::SendDlgItemMessage(_hSelf, IDC_CHECK_FORMAT_ON_SAVE, BM_SETCHECK, nppGUI._formatOnSave, 0);
 			::SendDlgItemMessage(_hSelf, IDC_CHECK_ALOOWSIMLINKFAW, BM_SETCHECK, nppGUI._isFawSymlinkAllowed, 0);
 
 			::SendDlgItemMessage(_hSelf, IDC_COMBO_AUTOUPDATE, CB_ADDSTRING, 0, reinterpret_cast<LPARAM>(L"Disable"));
@@ -3496,6 +3503,12 @@ intptr_t CALLBACK MiscSubDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM)
 				case IDC_CHECK_SAVEALLCONFIRM:
 				{
 					nppGUI._saveAllConfirm = isCheckedOrNot(IDC_CHECK_SAVEALLCONFIRM);
+					return TRUE;
+				}
+
+				case IDC_CHECK_FORMAT_ON_SAVE:
+				{
+					nppGUI._formatOnSave = isCheckedOrNot(IDC_CHECK_FORMAT_ON_SAVE);
 					return TRUE;
 				}
 
@@ -7115,6 +7128,168 @@ intptr_t CALLBACK SearchEngineSubDlg::run_dlgProc(UINT message, WPARAM wParam, L
 					::EnableWindow(::GetDlgItem(_hSelf, IDC_SEARCHENGINE_EDIT), true);
 				}
 				break;
+
+				default:
+					return FALSE;
+			}
+		}
+		break;
+	}
+	return FALSE;
+}
+
+void AiSubDlg::refreshApiKeyStatus()
+{
+	const bool hasKey = NppAi::HasStoredApiKey();
+	const NppGUI & nppGUI = NppParameters::getInstance().getNppGUI();
+	const std::wstring provider = nppGUI._aiProvider == L"OpenRouter" ? L"OpenRouter" : L"Gemini";
+	const std::wstring status = hasKey ? L"A " + provider + L" API key is currently stored." : L"No " + provider + L" API key stored yet.";
+	::SendDlgItemMessage(_hSelf, IDC_AI_APIKEY_STATUS_STATIC, WM_SETTEXT, 0, reinterpret_cast<LPARAM>(status.c_str()));
+	// When a key already exists, show a non-secret placeholder rather than leaving the field blank.
+	::SendDlgItemMessage(_hSelf, IDC_AI_APIKEY_EDIT, WM_SETTEXT, 0,
+		reinterpret_cast<LPARAM>(hasKey ? L"\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022" : L""));
+}
+
+void AiSubDlg::refreshProviderControls()
+{
+	NppGUI & nppGUI = NppParameters::getInstance().getNppGUI();
+	const bool openRouter = nppGUI._aiProvider == L"OpenRouter";
+	if (!openRouter && nppGUI._aiProvider != L"Gemini")
+		nppGUI._aiProvider = L"Gemini";
+
+	const wchar_t * providerName = openRouter ? L"OpenRouter" : L"Gemini";
+	const wchar_t * defaultModel = openRouter ? L"stealth/ox-alpha" : L"gemini-flash-latest";
+	const wchar_t * defaultEndpoint = openRouter
+		? L"https://openrouter.ai/api/v1/chat/completions"
+		: L"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent";
+
+	if (nppGUI._aiModel.empty())
+		nppGUI._aiModel = defaultModel;
+	if (nppGUI._aiEndpoint.empty())
+		nppGUI._aiEndpoint = defaultEndpoint;
+
+	::SendDlgItemMessage(_hSelf, IDC_AI_PROVIDER_COMBO, CB_RESETCONTENT, 0, 0);
+	::SendDlgItemMessage(_hSelf, IDC_AI_PROVIDER_COMBO, CB_ADDSTRING, 0, reinterpret_cast<LPARAM>(L"Google Gemini"));
+	::SendDlgItemMessage(_hSelf, IDC_AI_PROVIDER_COMBO, CB_ADDSTRING, 0, reinterpret_cast<LPARAM>(L"OpenRouter (OpenAI-compatible)"));
+	::SendDlgItemMessage(_hSelf, IDC_AI_PROVIDER_COMBO, CB_SETCURSEL, openRouter ? 1 : 0, 0);
+	::SetDlgItemTextW(_hSelf, IDC_AI_GB_STATIC, (std::wstring(L"AI (") + providerName + L")").c_str());
+	::SetDlgItemTextW(_hSelf, IDC_AI_MODEL_EDIT, nppGUI._aiModel.c_str());
+	::SetDlgItemTextW(_hSelf, IDC_AI_ENDPOINT_EDIT, nppGUI._aiEndpoint.c_str());
+	refreshApiKeyStatus();
+}
+
+intptr_t CALLBACK AiSubDlg::run_dlgProc(UINT message, WPARAM wParam, LPARAM /*lParam*/)
+{
+	NppParameters& nppParams = NppParameters::getInstance();
+	NppGUI& nppGUI = nppParams.getNppGUI();
+
+	switch (message)
+	{
+		case WM_INITDIALOG:
+		{
+			::SendDlgItemMessage(_hSelf, IDC_AI_APIKEY_EDIT, EM_SETLIMITTEXT, 4096, 0);
+			::SendDlgItemMessage(_hSelf, IDC_AI_MODEL_EDIT, EM_SETLIMITTEXT, 128, 0);
+			::SendDlgItemMessage(_hSelf, IDC_AI_ENDPOINT_EDIT, EM_SETLIMITTEXT, 2048, 0);
+			refreshProviderControls();
+			return TRUE;
+		}
+
+		case WM_CTLCOLOREDIT:
+		{
+			return NppDarkMode::onCtlColorCtrl(reinterpret_cast<HDC>(wParam));
+		}
+
+		case WM_CTLCOLORDLG:
+		case WM_CTLCOLORSTATIC:
+		{
+			return NppDarkMode::onCtlColorDlg(reinterpret_cast<HDC>(wParam));
+		}
+
+		case WM_PRINTCLIENT:
+		{
+			if (NppDarkMode::isEnabled())
+				return TRUE;
+			break;
+		}
+
+		case WM_COMMAND:
+		{
+			if (HIWORD(wParam) == CBN_SELCHANGE && LOWORD(wParam) == IDC_AI_PROVIDER_COMBO)
+			{
+				const LRESULT selection = ::SendDlgItemMessage(_hSelf, IDC_AI_PROVIDER_COMBO, CB_GETCURSEL, 0, 0);
+				const bool openRouter = selection == 1;
+				nppGUI._aiProvider = openRouter ? L"OpenRouter" : L"Gemini";
+				nppGUI._aiModel = openRouter ? L"stealth/ox-alpha" : L"gemini-flash-latest";
+				nppGUI._aiEndpoint = openRouter
+					? L"https://openrouter.ai/api/v1/chat/completions"
+					: L"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent";
+				refreshProviderControls();
+				return TRUE;
+			}
+
+			if (HIWORD(wParam) == EN_CHANGE && LOWORD(wParam) == IDC_AI_MODEL_EDIT)
+			{
+				wchar_t input[256] = { '\0' };
+				::SendDlgItemMessage(_hSelf, IDC_AI_MODEL_EDIT, WM_GETTEXT, _countof(input), reinterpret_cast<LPARAM>(input));
+				nppGUI._aiModel = input;
+				return TRUE;
+			}
+
+			if (HIWORD(wParam) == EN_CHANGE && LOWORD(wParam) == IDC_AI_ENDPOINT_EDIT)
+			{
+				wchar_t input[2048] = { '\0' };
+				::SendDlgItemMessage(_hSelf, IDC_AI_ENDPOINT_EDIT, WM_GETTEXT, _countof(input), reinterpret_cast<LPARAM>(input));
+				nppGUI._aiEndpoint = input;
+				return TRUE;
+			}
+
+			switch (LOWORD(wParam))
+			{
+				case IDC_AI_APIKEY_SAVE_BUTTON:
+				{
+					const int length = ::GetWindowTextLengthW(::GetDlgItem(_hSelf, IDC_AI_APIKEY_EDIT));
+					std::wstring keyWide(static_cast<size_t>(length) + 1, L'\0');
+					::GetDlgItemTextW(_hSelf, IDC_AI_APIKEY_EDIT, keyWide.data(), length + 1);
+					keyWide.resize(static_cast<size_t>(length));
+
+					// The bullet placeholder means the user did not type a new key: leave the stored one untouched.
+					const std::wstring placeholder(8, L'\u2022');
+					if (keyWide == placeholder)
+					{
+						::MessageBoxW(_hSelf, L"The stored API key was left unchanged.", L"Notepad++ AI", MB_OK | MB_ICONINFORMATION);
+						return TRUE;
+					}
+
+					const std::string keyUtf8 = wstring2string(keyWide, CP_UTF8);
+					std::wstring errorMessage;
+					if (NppAi::StoreApiKey(keyUtf8, errorMessage))
+					{
+						refreshApiKeyStatus();
+						::MessageBoxW(_hSelf, keyUtf8.empty() ? L"The API key was removed." : L"The API key was saved to Windows Credential Manager.", L"Notepad++ AI", MB_OK | MB_ICONINFORMATION);
+					}
+					else
+					{
+						::MessageBoxW(_hSelf, errorMessage.empty() ? L"The API key could not be saved." : errorMessage.c_str(), L"Notepad++ AI", MB_OK | MB_ICONERROR);
+					}
+					return TRUE;
+				}
+
+				case IDC_AI_TEST_BUTTON:
+				{
+					// Use the current fields for the test even if the user has not closed Preferences yet.
+					wchar_t modelInput[256] = { '\0' };
+					::SendDlgItemMessage(_hSelf, IDC_AI_MODEL_EDIT, WM_GETTEXT, _countof(modelInput), reinterpret_cast<LPARAM>(modelInput));
+					nppGUI._aiModel = modelInput;
+					wchar_t endpointInput[2048] = { '\0' };
+					::SendDlgItemMessage(_hSelf, IDC_AI_ENDPOINT_EDIT, WM_GETTEXT, _countof(endpointInput), reinterpret_cast<LPARAM>(endpointInput));
+					nppGUI._aiEndpoint = endpointInput;
+
+					std::wstring testMessage;
+					const HINSTANCE instance = reinterpret_cast<HINSTANCE>(::GetWindowLongPtr(_hSelf, GWLP_HINSTANCE));
+					const bool ok = NppAi::TestConnection(_hSelf, instance, testMessage);
+					::MessageBoxW(_hSelf, testMessage.c_str(), L"Notepad++ AI", MB_OK | (ok ? MB_ICONINFORMATION : MB_ICONERROR));
+					return TRUE;
+				}
 
 				default:
 					return FALSE;

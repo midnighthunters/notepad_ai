@@ -609,7 +609,6 @@ BEGIN
             MENUITEM "Open Containing Folder in Explorer", IDM_EDIT_OPENSELECTEDFILEFOLDERINEXPLORER
             MENUITEM SEPARATOR
             MENUITEM "&Redact Selection █ (Shift: ●)", IDM_EDIT_REDACT_SELECTION
-            MENUITEM "AI &Edit...", IDM_EDIT_AI_COMMAND
             MENUITEM SEPARATOR
             MENUITEM "Search on Internet", IDM_EDIT_SEARCHONINTERNET
             MENUITEM "Change Search Engine...", IDM_EDIT_CHANGESEARCHENGINE
@@ -644,6 +643,11 @@ BEGIN
             MENUITEM "Clear Read-Only for All Documents", IDM_EDIT_CLEARREADONLYFORALLDOCS
         END
         MENUITEM "Read-Only Attribute in Windows",    IDM_EDIT_TOGGLESYSTEMREADONLY
+    END
+
+    POPUP "&AI"
+    BEGIN
+        MENUITEM "AI &Edit...",                      IDM_EDIT_AI_COMMAND
     END
 
     POPUP "&Search"

@@ -1,0 +1,4 @@
+C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/Test/FormatOnSave/build/CMakeFiles/powereditor_format_on_save_tests.dir
+C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/Test/FormatOnSave/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/Test/FormatOnSave/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/Test/FormatOnSave/build/CMakeFiles/ZERO_CHECK.dir

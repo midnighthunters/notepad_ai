@@ -759,6 +759,7 @@ struct NppGUI final
 	bool _isFullReadOnlySavingForbidden = false;
 	bool _detectEncoding = true;
 	bool _saveAllConfirm = true;
+	bool _formatOnSave = true;
 	bool _setSaveDlgExtFiltToAllTypes = false;
 	bool _doTaskList = true;
 	AutoIndentMode _maintainIndent = autoIndent_advanced;
@@ -873,6 +874,12 @@ struct NppGUI final
 	enum SearchEngineChoice{ se_custom = 0, se_duckDuckGo = 1, se_google = 2, se_bing = 3, se_yahoo = 4, se_stackoverflow = 5 };
 	SearchEngineChoice _searchEngineChoice = se_google;
 	std::wstring _searchEngineCustom;
+
+	// AI integration. API keys are never stored here - they live in Windows Credential Manager.
+	// Only the selected provider and non-secret connection settings are persisted in config.xml.
+	std::wstring _aiProvider = L"Gemini";
+	std::wstring _aiEndpoint;
+	std::wstring _aiModel = L"gemini-flash-latest";
 
 	bool _isFolderDroppedOpenFiles = false;
 

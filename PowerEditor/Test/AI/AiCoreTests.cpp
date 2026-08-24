@@ -481,6 +481,35 @@ void testEndpointSecretsAndCancellation()
 	AiProviderRequest credentialedRequest;
 	credentialedRequest.model = "fixture-model";
 	credentialedRequest.messages.push_back({ AiMessageRole::User, "local test" });
+
+	AiProviderConfiguration retryConfiguration;
+	retryConfiguration.kind = AiProviderKind::OpenAiCompatibleChatCompletions;
+	retryConfiguration.endpoint = "https://fixture.invalid/v1/chat/completions";
+	const std::shared_ptr<AiFakeTransport> retryTransport = std::make_shared<AiFakeTransport>();
+	retryTransport->enqueueResponse(AiHttpResponse { 503, {}, "temporary overload" });
+	retryTransport->enqueueResponse(AiHttpResponse { 502, {}, "temporary gateway failure" });
+	retryTransport->enqueueResponse(fixtureResponse(AiProviderKind::OpenAiCompatibleChatCompletions));
+	AiHttpProvider retryProvider(retryConfiguration, retryTransport, []() { return AiResult<std::string>(std::string("fixture-secret")); });
+	const AiResult<std::string> retryResult = retryProvider.complete(credentialedRequest, {});
+	REQUIRE(test, retryResult && retryResult.value() == "plan");
+	REQUIRE(test, retryTransport->requests().size() == 3);
+
+	const std::shared_ptr<AiFakeTransport> exhaustedTransport = std::make_shared<AiFakeTransport>();
+	for (int attempt = 0; attempt < 4; ++attempt)
+		exhaustedTransport->enqueueResponse(AiHttpResponse { 503, {}, "temporary overload" });
+	AiHttpProvider exhaustedProvider(retryConfiguration, exhaustedTransport, []() { return AiResult<std::string>(std::string("fixture-secret")); });
+	const AiResult<std::string> exhaustedResult = exhaustedProvider.complete(credentialedRequest, {});
+	REQUIRE(test, !exhaustedResult && exhaustedResult.error().code == AiErrorCode::HttpFailure);
+	REQUIRE(test, exhaustedResult.error().message == "AI provider returned HTTP status 503 after 4 attempts.");
+	REQUIRE(test, exhaustedTransport->requests().size() == 4);
+
+	const std::shared_ptr<AiFakeTransport> permanentFailureTransport = std::make_shared<AiFakeTransport>();
+	permanentFailureTransport->enqueueResponse(AiHttpResponse { 400, {}, "invalid request" });
+	AiHttpProvider permanentFailureProvider(retryConfiguration, permanentFailureTransport, []() { return AiResult<std::string>(std::string("fixture-secret")); });
+	const AiResult<std::string> permanentFailureResult = permanentFailureProvider.complete(credentialedRequest, {});
+	REQUIRE(test, !permanentFailureResult && permanentFailureResult.error().code == AiErrorCode::HttpFailure);
+	REQUIRE(test, permanentFailureTransport->requests().size() == 1);
+
 	const std::shared_ptr<AiFakeTransport> insecureTransport = std::make_shared<AiFakeTransport>();
 	AiProviderConfiguration insecureConfiguration;
 	insecureConfiguration.kind = AiProviderKind::OpenAiCompatibleChatCompletions;

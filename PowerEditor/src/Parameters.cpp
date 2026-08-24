@@ -150,6 +150,7 @@ static constexpr WinMenuKeyDefinition winKeyDefs[]
 	{ VK_NULL,    IDM_EDIT_CURRENTDIRTOCLIP,                    false, false, false, nullptr },
 	{ VK_NULL,    IDM_EDIT_COPY_ALL_NAMES,                      false, false, false, nullptr },
 	{ VK_NULL,    IDM_EDIT_COPY_ALL_PATHS,                      false, false, false, nullptr },
+	{ VK_I,       IDM_EDIT_AI_COMMAND,                          true,  false, true,  nullptr },
 
 	{ VK_NULL,    IDM_EDIT_INS_TAB,                             false, false, false, nullptr },
 	{ VK_NULL,    IDM_EDIT_RMV_TAB,                             false, false, false, nullptr },
@@ -5907,6 +5908,11 @@ void NppParameters::feedGUIParameters(const NppXml::Element& element)
 		{
 			_nppGUI._saveAllConfirm = getBoolChildTextNode(childNode, _nppGUI._saveAllConfirm);
 		}
+		// <GUIConfig name="FormatOnSave">yes</GUIConfig>
+		else if (std::strcmp(nm, "FormatOnSave") == 0)
+		{
+			_nppGUI._formatOnSave = getBoolChildTextNode(childNode, _nppGUI._formatOnSave);
+		}
 		// <GUIConfig name="MaintainIndent">1</GUIConfig>
 		else if (std::strcmp(nm, "MaintainIndent") == 0 ||
 			std::strcmp(nm, "MaitainIndent") == 0) // typo - kept for the compatibility reason
@@ -6636,6 +6642,21 @@ void NppParameters::feedGUIParameters(const NppXml::Element& element)
 			const char* searchEngineCustom = NppXml::attribute(childNode, "searchEngineCustom");
 			if (searchEngineCustom && searchEngineCustom[0])
 				_nppGUI._searchEngineCustom = string2wstring(searchEngineCustom);
+		}
+		// <GUIConfig name="AI" provider="Gemini" endpoint="" model="gemini-flash-latest" />
+		else if (std::strcmp(nm, "AI") == 0)
+		{
+			const char* aiProvider = NppXml::attribute(childNode, "provider");
+			if (aiProvider && aiProvider[0])
+				_nppGUI._aiProvider = string2wstring(aiProvider);
+
+			const char* aiEndpoint = NppXml::attribute(childNode, "endpoint");
+			if (aiEndpoint && aiEndpoint[0])
+				_nppGUI._aiEndpoint = string2wstring(aiEndpoint);
+
+			const char* aiModel = NppXml::attribute(childNode, "model");
+			if (aiModel && aiModel[0])
+				_nppGUI._aiModel = string2wstring(aiModel);
 		}
 		// <GUIConfig name="Searching" monospacedFontFindDlg="no" fillFindFieldWithSelected="yes" fillFindFieldSelectCaret="yes"
 		// findDlgAlwaysVisible="no" confirmReplaceInAllOpenDocs="yes" replaceStopsWithoutFindingNext="no" inSelectionAutocheckThreshold="1024"
@@ -7571,6 +7592,11 @@ void NppParameters::createXmlTreeFromGUIParams()
 		insertGUIConfigBoolNode(newGUIRoot, "SaveAllConfirm", _nppGUI._saveAllConfirm);
 	}
 
+	// <GUIConfig name="FormatOnSave">yes</GUIConfig>
+	{
+		insertGUIConfigBoolNode(newGUIRoot, "FormatOnSave", _nppGUI._formatOnSave);
+	}
+
 	// <GUIConfig name="NewDocDefaultSettings" format="0" encoding="4" lang="0" codepage="-1" openAnsiAsUTF8="yes" addNewDocumentOnStartup="no" useContentAsTabName="no" />
 	{
 		NppXml::Element GUIConfigElement = NppXml::createChildElement(newGUIRoot, "GUIConfig");
@@ -7839,6 +7865,15 @@ void NppParameters::createXmlTreeFromGUIParams()
 		NppXml::setAttribute(GUIConfigElement, "name", "searchEngine");
 		NppXml::setAttribute(GUIConfigElement, "searchEngineChoice", _nppGUI._searchEngineChoice);
 		NppXml::setAttribute(GUIConfigElement, "searchEngineCustom", wstring2string(_nppGUI._searchEngineCustom));
+	}
+
+	// <GUIConfig name="AI" provider="Gemini" endpoint="" model="gemini-flash-latest" />
+	{
+		NppXml::Element GUIConfigElement = NppXml::createChildElement(newGUIRoot, "GUIConfig");
+		NppXml::setAttribute(GUIConfigElement, "name", "AI");
+		NppXml::setAttribute(GUIConfigElement, "provider", wstring2string(_nppGUI._aiProvider));
+		NppXml::setAttribute(GUIConfigElement, "endpoint", wstring2string(_nppGUI._aiEndpoint));
+		NppXml::setAttribute(GUIConfigElement, "model", wstring2string(_nppGUI._aiModel));
 	}
 
 	{

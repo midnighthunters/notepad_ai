@@ -136,6 +136,7 @@ SET(src_files
 			./Notepad_plus_Window.cpp
 			./NppBigSwitch.cpp
 			./NppCommands.cpp
+			./FormatOnSave.cpp
 			./NppIO.cpp
 			./NppNotification.cpp
 			./uchardet/nsBig5Prober.cpp
@@ -222,6 +223,7 @@ SET(include_files
 			./MISC/sha512/sha512.h
 			./MISC/hmac/hmac.h
 			./NppDarkMode.h
+			./FormatOnSave.h
 			./NppXml.h
 			./ScintillaComponent/columnEditor_rc.h
 			./ScintillaComponent/FindReplaceDlg_rc.h

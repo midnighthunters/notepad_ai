@@ -370,6 +370,17 @@ private :
 	intptr_t CALLBACK run_dlgProc(UINT message, WPARAM wParam, LPARAM lParam) override;
 };
 
+class AiSubDlg : public StaticDialog
+{
+public :
+	AiSubDlg() = default;
+
+private :
+	intptr_t CALLBACK run_dlgProc(UINT message, WPARAM wParam, LPARAM lParam) override;
+	void refreshApiKeyStatus();
+	void refreshProviderControls();
+};
+
 class PerformanceSubDlg : public StaticDialog
 {
 friend class PreferenceDlg;
@@ -447,6 +458,7 @@ private :
 	CloudAndLinkSubDlg _cloudAndLinkSubDlg;
 	SearchEngineSubDlg _searchEngineSubDlg;
 	SearchingSubDlg _searchingSubDlg;
+	AiSubDlg _aiSubDlg;
 
 	ControlInfoTip _gotoTip;
 };

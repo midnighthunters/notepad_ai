@@ -196,9 +196,10 @@ private:
 
 [[nodiscard]] AiError winHttpError(std::stop_token stopToken)
 {
+	const DWORD errorCode = ::GetLastError();
 	if (stopToken.stop_requested())
 		return cancelledError();
-	return AiMakeError(AiErrorCode::TransportFailure, "WinHTTP request failed.");
+	return AiMakeError(AiErrorCode::TransportFailure, "WinHTTP request failed (error " + std::to_string(errorCode) + ").");
 }
 
 #endif
@@ -334,7 +335,7 @@ AiResult<AiHttpResponse> WinHttpAiTransport::send(const AiHttpRequest & request,
 	if (wideHeaders.value().size() > static_cast<std::size_t>(std::numeric_limits<DWORD>::max()) || request.body.size() > static_cast<std::size_t>(std::numeric_limits<DWORD>::max()))
 		return AiMakeError(AiErrorCode::SizeLimitExceeded, "HTTP request exceeds the WinHTTP API size limit.");
 
-	ScopedWinHttpHandle session(::WinHttpOpen(L"Notepad++ AI editing core/1.0", WINHTTP_ACCESS_TYPE_NO_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0));
+	ScopedWinHttpHandle session(::WinHttpOpen(L"Notepad++ AI editing core/1.0", WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0));
 	if (session.get() == nullptr)
 		return winHttpError(stopToken);
 	if (!::WinHttpSetTimeouts(session.get(), static_cast<int>(_options.resolveTimeoutMilliseconds), static_cast<int>(_options.connectTimeoutMilliseconds), static_cast<int>(_options.sendTimeoutMilliseconds), static_cast<int>(_options.receiveTimeoutMilliseconds)))
