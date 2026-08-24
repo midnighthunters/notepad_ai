@@ -1,0 +1,3 @@
+C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/CMakeFiles/notepad++.dir
+C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/CMakeFiles/ZERO_CHECK.dir

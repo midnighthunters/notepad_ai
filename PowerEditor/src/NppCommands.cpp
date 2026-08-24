@@ -56,6 +56,7 @@
 #include "VerticalFileSwitcher.h"
 #include "Window.h"
 #include "WindowsDlg.h"
+#include "AI/AiNotepadCommand.h"
 #include "ansiCharPanel.h"
 #include "calc_sha1.h"
 #include "clipboardFormats.h"
@@ -218,6 +219,10 @@ void Notepad_plus::command(int id)
 			_pEditView->execute(SCI_ENDUNDOACTION);
 		}
 		break;
+
+		case IDM_EDIT_AI_COMMAND:
+			NppAi::RunNotepadAiEdit(_pPublicInterface->getHSelf(), _pPublicInterface->getHinst(), *_pEditView);
+			break;
 
 		case IDM_FILE_OPEN:
 		{

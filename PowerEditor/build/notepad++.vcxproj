@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8C410928-C45B-3DAB-9FEE-C30D31C0272C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>notepad++</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">notepad++.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">notepad++</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">notepad++.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">notepad++</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">notepad++.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">notepad++</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">notepad++.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">notepad++</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);UNICODE;_UNICODE;_WIN32_WINNT=_WIN32_WINNT_WIN7;NTDDI_VERSION=NTDDI_WIN7;_USE_64BIT_TIME_T;NOMINMAX;OEMRESOURCE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;UNICODE;_UNICODE;_WIN32_WINNT=_WIN32_WINNT_WIN7;NTDDI_VERSION=NTDDI_WIN7;_USE_64BIT_TIME_T;NOMINMAX;OEMRESOURCE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\azureuser\Desktop\notepad\notepad_ai\scintilla\bin\libScintilla.lib;C:\Users\azureuser\Desktop\notepad\notepad_ai\lexilla\bin\libLexilla.lib;comctl32.lib;shlwapi.lib;dbghelp.lib;version.lib;crypt32.lib;wintrust.lib;sensapi.lib;wininet.lib;imm32.lib;msimg32.lib;uxtheme.lib;dwmapi.lib;winhttp.lib;advapi32.lib;credui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/Debug/notepad++.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/Debug/notepad++.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Manifest>
+      <AdditionalManifestFiles>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\notepad++.exe.manifest;</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;UNICODE;_UNICODE;_WIN32_WINNT=_WIN32_WINNT_WIN7;NTDDI_VERSION=NTDDI_WIN7;_USE_64BIT_TIME_T;NOMINMAX;OEMRESOURCE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;UNICODE;_UNICODE;_WIN32_WINNT=_WIN32_WINNT_WIN7;NTDDI_VERSION=NTDDI_WIN7;_USE_64BIT_TIME_T;NOMINMAX;OEMRESOURCE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\azureuser\Desktop\notepad\notepad_ai\scintilla\bin\libScintilla.lib;C:\Users\azureuser\Desktop\notepad\notepad_ai\lexilla\bin\libLexilla.lib;comctl32.lib;shlwapi.lib;dbghelp.lib;version.lib;crypt32.lib;wintrust.lib;sensapi.lib;wininet.lib;imm32.lib;msimg32.lib;uxtheme.lib;dwmapi.lib;winhttp.lib;advapi32.lib;credui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/Release/notepad++.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/Release/notepad++.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Manifest>
+      <AdditionalManifestFiles>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\notepad++.exe.manifest;</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;UNICODE;_UNICODE;_WIN32_WINNT=_WIN32_WINNT_WIN7;NTDDI_VERSION=NTDDI_WIN7;_USE_64BIT_TIME_T;NOMINMAX;OEMRESOURCE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;UNICODE;_UNICODE;_WIN32_WINNT=_WIN32_WINNT_WIN7;NTDDI_VERSION=NTDDI_WIN7;_USE_64BIT_TIME_T;NOMINMAX;OEMRESOURCE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\azureuser\Desktop\notepad\notepad_ai\scintilla\bin\libScintilla.lib;C:\Users\azureuser\Desktop\notepad\notepad_ai\lexilla\bin\libLexilla.lib;comctl32.lib;shlwapi.lib;dbghelp.lib;version.lib;crypt32.lib;wintrust.lib;sensapi.lib;wininet.lib;imm32.lib;msimg32.lib;uxtheme.lib;dwmapi.lib;winhttp.lib;advapi32.lib;credui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/MinSizeRel/notepad++.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/MinSizeRel/notepad++.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Manifest>
+      <AdditionalManifestFiles>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\notepad++.exe.manifest;</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;UNICODE;_UNICODE;_WIN32_WINNT=_WIN32_WINNT_WIN7;NTDDI_VERSION=NTDDI_WIN7;_USE_64BIT_TIME_T;NOMINMAX;OEMRESOURCE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;UNICODE;_UNICODE;_WIN32_WINNT=_WIN32_WINNT_WIN7;NTDDI_VERSION=NTDDI_WIN7;_USE_64BIT_TIME_T;NOMINMAX;OEMRESOURCE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\scintilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\..\..\lexilla\include;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AboutDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ImageListSet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\OpenSaveFileDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\SplitterContainer;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TabBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Process;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\ScintillaComponent;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\SysMsg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StatusBar;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\StaticDialog\RunDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\pugixml;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ColourPicker;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\Win32Explr;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\RegExt;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TrayIcon;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\shortcut;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Grid;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ContextMenu;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\PluginsManager;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\Preference;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\WindowsDlg;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TaskList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DockingWnd;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\TreeView;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ToolTip;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Exception;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\Common;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\AnsiCharPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ClipboardHistory;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FindCharsInRange;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\VerticalFileSwitcher;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ProjectPanel;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\DocumentMap;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FunctionList;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\uchardet;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\FileBrowser;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\ReadDirectoryChanges;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\md5;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha1;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha2;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\sha512;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\MISC\hmac;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\WinControls\PluginsAdmin;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\.\json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\azureuser\Desktop\notepad\notepad_ai\scintilla\bin\libScintilla.lib;C:\Users\azureuser\Desktop\notepad\notepad_ai\lexilla\bin\libLexilla.lib;comctl32.lib;shlwapi.lib;dbghelp.lib;version.lib;crypt32.lib;wintrust.lib;sensapi.lib;wininet.lib;imm32.lib;msimg32.lib;uxtheme.lib;dwmapi.lib;winhttp.lib;advapi32.lib;credui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/RelWithDebInfo/notepad++.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/RelWithDebInfo/notepad++.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Manifest>
+      <AdditionalManifestFiles>C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\notepad++.exe.manifest;</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/src -BC:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build --check-stamp-file C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeCCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeCXXCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeRCCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/src -BC:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build --check-stamp-file C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeCCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeCXXCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeRCCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/src -BC:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build --check-stamp-file C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeCCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeCXXCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeRCCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/src -BC:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build --check-stamp-file C:/Users/azureuser/Desktop/notepad/notepad_ai/PowerEditor/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Linker\MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeCCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeCXXCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeRCCompiler.cmake;C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\4.4.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiCore.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiNotepadCommand.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiProvider.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiSecretStore.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiWinHttpTransport.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\DarkMode\DarkMode.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\verifySignedfile.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\md5\md5Dlgs.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha1\calc_sha1.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha1\sha1.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha2\sha-256.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha512\sha512.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppDarkMode.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\dpiManagerV2.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Process\Processus.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AboutDlg\AboutDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AnsiCharPanel\ansiCharPanel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\AutoCompletion.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AnsiCharPanel\asciiListView.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FileBrowser\fileBrowser.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Grid\BabyGrid.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Grid\BabyGridWrapper.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\Buffer.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\CharDistribution.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ClipboardHistory\clipboardHistoryPanel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\ColourPicker.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\ColourPopup.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\columnEditor.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\Common.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\FileInterface.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\SortLocale.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ContextMenu\ContextMenu.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\OpenSaveFileDialog\CustomFileDialog.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\PluginsAdmin\pluginsAdmin.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ReadDirectoryChanges\ReadDirectoryChanges.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ReadDirectoryChanges\ReadDirectoryChangesPrivate.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ReadDirectoryChanges\ReadFileChanges.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TabBar\ControlsTab.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\DockingCont.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\DockingManager.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\DockingSplitter.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\DocTabView.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DocumentMap\documentMap.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DocumentMap\documentSnapshot.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DoubleBuffer\DoubleBuffer.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\EncodingMapper.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FindCharsInRange\FindCharsInRange.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\FindReplaceDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\FunctionCallTip.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FunctionList\functionListPanel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FunctionList\functionParser.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\GoToLineDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\Gripper.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ImageListSet\ImageListSet.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\JpCntx.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\LangBulgarianModel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\LangCyrillicModel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\LangGreekModel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\LangHebrewModel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\LangHungarianModel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\LangThaiModel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\lastRecentFileList.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\lesDlgs.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AnsiCharPanel\ListView.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\localization.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Exception\MiniDumper.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Notepad_plus.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Notepad_plus_Window.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppBigSwitch.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppCommands.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppIO.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppNotification.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsBig5Prober.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsCharSetProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEscCharsetProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEscSM.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEUCJPProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEUCKRProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEUCTWProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsGB2312Prober.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsHebrewProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsLatin1Prober.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsMBCSGroupProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsMBCSSM.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsSBCharSetProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsSBCSGroupProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsSJISProber.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsUniversalDetector.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsUTF8Prober.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Parameters.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\PluginsManager\PluginsManager.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Preference\preferenceDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\Printer.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ProjectPanel\ProjectPanel.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\RegExt\regExtDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\StaticDialog\RunDlg\RunDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\shortcut\RunMacroDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\ScintillaCtrls.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\ScintillaEditView.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\shortcut\shortcut.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Grid\ShortcutMapper.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TreeView\TreeView.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\SizeableDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\SmartHighlighter.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\SplitterContainer\Splitter.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\SplitterContainer\SplitterContainer.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\StaticDialog\StaticDialog.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\StatusBar\StatusBar.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TabBar\TabBar.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TaskList\TaskList.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TaskList\TaskListDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\pugixml\pugixml.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ToolBar\ToolBar.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ToolTip\ToolTip.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TrayIcon\trayIconControler.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\uchardet.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AboutDlg\URLCtrl.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\UserDefineDialog.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Utf8_16.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\VerticalFileSwitcher\VerticalFileSwitcher.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\VerticalFileSwitcher\VerticalFileSwitcherListView.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Exception\Win32Exception.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\WindowsDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\winmain.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\WinMgr.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\WinRect.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\WordStyleDlg.cpp" />
+    <ClCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\xmlMatchedTagsHighlighter.cpp" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiCore.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiNotepadCommand.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiProvider.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiSecretStore.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\AI\AiWinHttpTransport.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\NppConstants.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\clipboardFormats.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\DarkMode\DarkMode.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\DarkMode\IatHook.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\DarkMode\UAHMenuBar.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\dpiManagerV2.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\keys.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\localizationString.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\Sorters.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\verifySignedfile.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\md5\md5.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\md5\md5Dlgs.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\md5\md5Dlgs_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha1\calc_sha1.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha1\sha1.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha2\sha-256.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\sha512\sha512.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\hmac\hmac.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppDarkMode.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\NppXml.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\columnEditor_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\FindReplaceDlg_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Utf8.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AboutDlg\AboutDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AnsiCharPanel\ansiCharPanel.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\AutoCompletion.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AnsiCharPanel\ansiCharPanel_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AnsiCharPanel\asciiListView.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\ColourPopupResource.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\WordStyleDlgRes.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DocumentMap\documentMap_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DocumentMap\documentSnapshot.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DocumentMap\documentSnapshot_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FindCharsInRange\findCharsInRange_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Grid\BabyGrid.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Grid\BabyGridWrapper.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\Buffer.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\CharDistribution.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ClipboardHistory\clipboardHistoryPanel.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ClipboardHistory\clipboardHistoryPanel_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\colors.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\ColourPicker.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\ColourPopup.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\columnEditor.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\Common.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Common\FileInterface.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ContextMenu\ContextMenu.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\OpenSaveFileDialog\CustomFileDialog.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\PluginsAdmin\pluginsAdmin.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\PluginsAdmin\pluginsAdminRes.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Preference\preference_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ReadDirectoryChanges\targetver.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\shortcut\shortcutRc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\StaticDialog\RunDlg\RunDlg_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TabBar\ControlsTab.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\Docking.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\DockingCont.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\DockingDlgInterface.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\DockingManager.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\dockingResource.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\DockingSplitter.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\DocTabView.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DocumentMap\documentMap.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DoubleBuffer\DoubleBuffer.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\EncodingMapper.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\FileNameStringSplitter.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FindCharsInRange\FindCharsInRange.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\FindReplaceDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\FunctionCallTip.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FunctionList\functionListPanel.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FunctionList\functionListPanel_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FunctionList\functionParser.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\GoToLineDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\Gripper.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\PluginsManager\IDAllocator.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ImageListSet\ImageListSet.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\JpCntx.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\lastRecentFileList.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\lesDlgs.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AnsiCharPanel\ListView.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\localization.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\menuCmdID.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Exception\MiniDumper.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Notepad_plus.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\PluginsManager\Notepad_plus_msgs.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Notepad_plus_Window.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsBig5Prober.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsCharSetProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsCodingStateMachine.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nscore.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEscCharsetProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEUCJPProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEUCKRProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsEUCTWProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsGB2312Prober.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsHebrewProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsLatin1Prober.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsMBCSGroupProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsPkgInt.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsSBCharSetProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsSBCSGroupProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsSJISProber.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsUniversalDetector.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\nsUTF8Prober.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Parameters.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\PluginsManager\PluginInterface.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\PluginsManager\PluginsManager.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Preference\preferenceDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\Printer.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\prmem.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ProjectPanel\ProjectPanel.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ProjectPanel\ProjectPanel_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\RegExt\regExtDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\RegExt\regExtDlgRc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\resource.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\StaticDialog\RunDlg\RunDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\shortcut\RunMacroDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\shortcut\RunMacroDlg_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\ScintillaCtrls.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\ScintillaEditView.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\shortcut\shortcut.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Grid\ShortcutMapper.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Grid\ShortcutMapper_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TreeView\TreeView.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\SizeableDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\SmartHighlighter.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\SplitterContainer\Splitter.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\SplitterContainer\SplitterContainer.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\StaticDialog\StaticDialog.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\StatusBar\StatusBar.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TabBar\TabBar.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TaskList\TaskList.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TaskList\TaskListDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TaskList\TaskListDlg_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\pugixml\pugiconfig.hpp" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\pugixml\pugixml.hpp" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ToolBar\ToolBar.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ToolTip\ToolTip.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TrayIcon\trayIconControler.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\uchardet\uchardet.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AboutDlg\URLCtrl.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\UserDefineDialog.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\UserDefineResource.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Utf8_16.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\VerticalFileSwitcher\VerticalFileSwitcher.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\VerticalFileSwitcher\VerticalFileSwitcher_rc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\VerticalFileSwitcher\VerticalFileSwitcherListView.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\Exception\Win32Exception.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Window.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\WindowsDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\WindowsDlgRc.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\WinMgr.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\WordStyleDlg.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\xmlMatchedTagsHighlighter.h" />
+    <ClInclude Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\rgba_icons.h" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\md5\md5Dlgs.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\AnsiCharPanel\ansiCharPanel.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ClipboardHistory\clipboardHistoryPanel.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\ColourPopup.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\columnEditor.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DockingWnd\DockingGUIWidget.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DocumentMap\documentMap.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\DocumentMap\documentSnapshot.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FileBrowser\fileBrowser.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FindCharsInRange\findCharsInRange.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\FindReplaceDlg.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\FunctionList\functionListPanel.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\Notepad_plus.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\PluginsAdmin\pluginsAdmin.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Preference\preference.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ProjectPanel\ProjectPanel.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\MISC\RegExt\regExtDlg.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\StaticDialog\RunDlg\RunDlg.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\shortcut\RunMacroDlg.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\shortcut\shortcut.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\Grid\ShortcutMapper.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\TaskList\TaskListDlg.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\ScintillaComponent\UserDefineDialog.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\VerticalFileSwitcher\VerticalFileSwitcher.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\WindowsDlg\WindowsDlg.rc" />
+    <ResourceCompile Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\src\WinControls\ColourPicker\WordStyleDlg.rc" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\azureuser\Desktop\notepad\notepad_ai\PowerEditor\build\ZERO_CHECK.vcxproj">
+      <Project>{8C6D5832-D5A9-39BA-9A13-6AE9AF3C8988}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

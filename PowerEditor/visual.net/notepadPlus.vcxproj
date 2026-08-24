@@ -95,6 +95,11 @@
     <IntDir>arm64\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\AI\AiCore.cpp" />
+    <ClCompile Include="..\src\AI\AiNotepadCommand.cpp" />
+    <ClCompile Include="..\src\AI\AiProvider.cpp" />
+    <ClCompile Include="..\src\AI\AiSecretStore.cpp" />
+    <ClCompile Include="..\src\AI\AiWinHttpTransport.cpp" />
     <ClCompile Include="..\src\DarkMode\DarkMode.cpp" />
     <ClCompile Include="..\src\MISC\Common\SortLocale.cpp" />
     <ClCompile Include="..\src\MISC\Common\verifySignedfile.cpp" />
@@ -222,6 +227,11 @@
     <ResourceCompile Include="..\src\WinControls\FileBrowser\fileBrowser.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\AI\AiCore.h" />
+    <ClInclude Include="..\src\AI\AiNotepadCommand.h" />
+    <ClInclude Include="..\src\AI\AiProvider.h" />
+    <ClInclude Include="..\src\AI\AiSecretStore.h" />
+    <ClInclude Include="..\src\AI\AiWinHttpTransport.h" />
     <ClInclude Include="..\src\clipboardFormats.h" />
     <ClInclude Include="..\src\DarkMode\DarkMode.h" />
     <ClInclude Include="..\src\DarkMode\IatHook.h" />

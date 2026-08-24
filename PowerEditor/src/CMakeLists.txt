@@ -66,6 +66,11 @@ SET(projIncludDir	../../scintilla/include/
 
 
 SET(src_files
+			./AI/AiCore.cpp
+			./AI/AiNotepadCommand.cpp
+			./AI/AiProvider.cpp
+			./AI/AiSecretStore.cpp
+			./AI/AiWinHttpTransport.cpp
 			./DarkMode/DarkMode.cpp
 			./MISC/Common/verifySignedfile.cpp
 			./MISC/md5/md5Dlgs.cpp
@@ -193,6 +198,11 @@ SET(src_files
 )
 
 SET(include_files
+			./AI/AiCore.h
+			./AI/AiNotepadCommand.h
+			./AI/AiProvider.h
+			./AI/AiSecretStore.h
+			./AI/AiWinHttpTransport.h
 			./MISC/Common/NppConstants.h
 			./clipboardFormats.h
 			./DarkMode/DarkMode.h
@@ -383,7 +393,7 @@ SET(rcFiles
 
 IF (WIN32)
 	SET(option WIN32)
-	SET(win32_LIBRARIES comctl32 shlwapi dbghelp version crypt32 wintrust sensapi wininet imm32 msimg32 uxtheme dwmapi)
+	SET(win32_LIBRARIES comctl32 shlwapi dbghelp version crypt32 wintrust sensapi wininet imm32 msimg32 uxtheme dwmapi winhttp advapi32 credui)
 	set(CMAKE_CXX_STANDARD 20)
 if ( MSVC )
 	#do not use for mingw builds

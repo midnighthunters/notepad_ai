@@ -48,6 +48,7 @@ find_package(Threads REQUIRED)
 target_link_libraries(powereditor_ai_core_tests PRIVATE Threads::Threads)
 
 if(WIN32)
+	target_compile_definitions(powereditor_ai_core_tests PRIVATE NOMINMAX)
 	target_link_libraries(powereditor_ai_core_tests PRIVATE winhttp advapi32)
 endif()
 

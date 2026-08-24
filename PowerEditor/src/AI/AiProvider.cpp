@@ -17,6 +17,7 @@
 #include "AiProvider.h"
 #include "AiWinHttpTransport.h"
 
+#include <algorithm>
 #include <cmath>
 #include <exception>
 #include <limits>
@@ -255,7 +256,13 @@ public:
 		body["max_output_tokens"] = request.maxOutputTokens;
 		body["input"] = Json::array();
 		for (const AiMessage & message : request.messages)
-			body["input"].push_back({ { "role", roleName(message.role) }, { "content", Json::array({ { { "type", "input_text" }, { "text", message.content } }) } } });
+		{
+			Json input;
+			input["role"] = roleName(message.role);
+			input["content"] = Json::array();
+			input["content"].push_back({ { "type", "input_text" }, { "text", message.content } });
+			body["input"].push_back(std::move(input));
+		}
 		return makeJsonRequest(configuration, std::move(body), { { "Authorization", "Bearer " + std::string(secret) } });
 	}
 
@@ -365,7 +372,11 @@ public:
 				continue;
 			}
 			const std::string role = message.role == AiMessageRole::Assistant ? "model" : "user";
-			body["contents"].push_back({ { "role", role }, { "parts", Json::array({ { { "text", message.content } }) } } });
+			Json content;
+			content["role"] = role;
+			content["parts"] = Json::array();
+			content["parts"].push_back({ { "text", message.content } });
+			body["contents"].push_back(std::move(content));
 		}
 		if (!systemParts.empty())
 			body["systemInstruction"] = { { "parts", systemParts } };
@@ -454,15 +465,19 @@ AiResult<std::string> AiHttpProvider::complete(const AiProviderRequest & request
 	{
 		if (!_secretReader)
 			return AiMakeError(AiErrorCode::SecretUnavailable, "AI provider credential is unavailable.");
-		const AiResult<std::string> loadedSecret = _secretReader();
+		AiResult<std::string> loadedSecret = _secretReader();
 		if (!loadedSecret || loadedSecret.value().empty() || !AiIsValidUtf8(loadedSecret.value()) || hasHeaderControlCharacter(loadedSecret.value()))
 			return AiMakeError(AiErrorCode::SecretUnavailable, "AI provider credential is unavailable.");
 		secret = loadedSecret.value();
+		std::fill(loadedSecret.value().begin(), loadedSecret.value().end(), '\0');
+		loadedSecret.value().clear();
 	}
 	if (stopToken.stop_requested())
 		return cancelledError();
 
-	const AiResult<AiHttpRequest> wireRequest = _adapter->serialize(effectiveRequest, _configuration, secret);
+	AiResult<AiHttpRequest> wireRequest = _adapter->serialize(effectiveRequest, _configuration, secret);
+	std::fill(secret.begin(), secret.end(), '\0');
+	secret.clear();
 	if (!wireRequest)
 		return wireRequest.error();
 	const AiResult<AiValidatedEndpoint> endpoint = AiValidateEndpointUrl(wireRequest.value().url);
@@ -470,15 +485,20 @@ AiResult<std::string> AiHttpProvider::complete(const AiProviderRequest & request
 		return endpoint.error();
 	if (_adapter->requiresSecret() && !endpoint.value().usesHttps && !_configuration.allowInsecureLoopbackForSecret)
 		return AiMakeError(AiErrorCode::TransportRejected, "A credentialed provider requires HTTPS unless loopback HTTP is explicitly enabled.");
-	const AiResult<AiHttpResponse> wireResponse = _transport->send(wireRequest.value(), stopToken);
+	AiResult<AiHttpResponse> wireResponse = _transport->send(wireRequest.value(), stopToken);
+	for (AiHttpHeader & header : wireRequest.value().headers)
+	{
+		std::fill(header.value.begin(), header.value.end(), '\0');
+		header.value.clear();
+	}
 	if (!wireResponse)
 	{
 		if (wireResponse.error().code == AiErrorCode::Cancelled || stopToken.stop_requested())
 			return cancelledError();
-		return AiMakeError(wireResponse.error().code, "AI provider request failed.");
+		return AiMakeError(wireResponse.error().code, "AI provider request failed: " + wireResponse.error().message);
 	}
 	if (wireResponse.value().statusCode < 200 || wireResponse.value().statusCode >= 300)
-		return AiMakeError(AiErrorCode::HttpFailure, "AI provider returned a non-success HTTP status.");
+		return AiMakeError(AiErrorCode::HttpFailure, "AI provider returned HTTP status " + std::to_string(wireResponse.value().statusCode) + ".");
 	if (stopToken.stop_requested())
 		return cancelledError();
 	return _adapter->decode(wireResponse.value());
